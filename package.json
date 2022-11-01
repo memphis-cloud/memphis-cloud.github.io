@@ -1,0 +1,56 @@
+{
+  "name": "turretcss",
+  "version": "5.2.2",
+  "description": "Developed for design. turretcss is a styles and browser behaviour normalisation framework for rapid development of responsive and accessible websites.",
+  "homepage": "https://turretcss.com/",
+  "author": "Bigfish.tv",
+  "license": "MIT",
+  "style": "turret/turret.css",
+  "contributors": [
+    {
+      "name": "Scott de Jonge",
+      "email": "scottdj@bigfish.tv",
+      "url": "https://scottdejonge.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/turretcss/turretcss"
+  },
+  "bugs": {
+    "url": "https://github.com/turretcss/turretcss/issues"
+  },
+  "keywords": [
+    "css",
+    "postcss",
+    "postcss-preset-env",
+    "a11y",
+    "html",
+    "responsive",
+    "front-end",
+    "framework",
+    "web"
+  ],
+  "scripts": {
+    "start": "npm run watch",
+    "watch": "npm run watch:turret & npm run watch:docs",
+    "watch:turret": "npm run compile:turret -- --verbose --watch",
+    "watch:docs": "npm run compile:docs -- --verbose --watch",
+    "compile:turret": "postcss turret/turret.css -o dist/turretcss.min.css",
+    "compile:docs": "postcss docs/assets/css/main.css -o docs/dist/docs.css",
+    "format": "npm run format:css & npm run format:md",
+    "format:css": "prettier --single-quote --print-width 180 --write '*.css'",
+    "format:md": "prettier --print-width 180 --write '*.md'"
+  },
+  "devDependencies": {
+    "cssnano": "^4.1.0",
+    "postcss": "^7.0.17",
+    "postcss-cli": "^6.0.0",
+    "postcss-import": "^12.0.0",
+    "postcss-preset-env": "^6.7.0",
+    "prettier": "^1.14.0"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ]
+}
